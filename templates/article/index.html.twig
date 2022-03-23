@@ -3,43 +3,25 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
+  <h1>Article index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Short_description</th>
-                <th>Long_description</th>
-                <th>Content</th>
-                <th>Img</th>
-                <th>Creation_date</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td>{{ article.id }}</td>
-                <td>{{ article.title }}</td>
-                <td>{{ article.shortDescription }}</td>
-                <td>{{ article.longDescription }}</td>
-                <td>{{ article.content }}</td>
-                <td>{{ article.img }}</td>
-                <td>{{ article.creationDate ? article.creationDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_article_new') }}">Create new</a>
+  <div class="row mb-2">
+  {% for article in articles %}
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{ article.title }}</h3>
+          <div class="mb-1 text-muted">{{ article.creationDate ? article.creationDate|date("F jS") : '' }}</div>
+          <p class="card-text mb-auto">{{ article.shortDescription }}</p>
+          <a href="{{ path('app_article_show', {'id': article.id}) }}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img" width="200" height="250" src="{{ article.img }}" alt="{{ article.title }} img"/>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <p>no records found</p>
+  {% endfor %}
+  </div>
 {% endblock %}

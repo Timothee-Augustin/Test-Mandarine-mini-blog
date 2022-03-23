@@ -1,10 +1,30 @@
-<!doctype html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title>Wild Series</title>
-</head>
-<body>
-   <h1>{{ website }} index</h1>
-</body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block title %}Article index{% endblock %}
+
+{% block body %}
+  <h1>Article index</h1>
+
+  <div class="row mb-2">
+  {% for article in articles %}
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{ article.title }}</h3>
+          <div class="mb-1 text-muted">{{ article.creationDate ? article.creationDate|date("F jS") : '' }}</div>
+          <p class="card-text mb-auto">{{ article.shortDescription }}</p>
+          <div class="row justify-content-between">
+            <a href="{{ path('app_article_show', {'id': article.id}) }}" class="col-5">Continue reading</a>
+            <a href="{{ path('app_article_edit', {'id': article.id}) }}" class="btn btn-secondary col-2">edit</a>
+          </div>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img" width="200" height="250" src="{{ article.img }}" alt="{{ article.title }} img"/>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <p>no records found</p>
+  {% endfor %}
+  </div>
+{% endblock %}

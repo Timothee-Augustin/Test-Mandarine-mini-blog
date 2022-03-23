@@ -47,12 +47,6 @@ class Article
      */
     private $creation_date;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=user::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $author;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -129,17 +123,4 @@ class Article
 
         return $this;
     }
-
-    public function getAuthorId(): ?user
-    {
-        return $this->author_id;
-    }
-
-    public function setAuthorId(?user $author_id): self
-    {
-        $this->author_id = $author_id;
-
-        return $this;
-    }
-
 }

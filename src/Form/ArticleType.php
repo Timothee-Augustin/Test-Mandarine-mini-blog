@@ -17,7 +17,7 @@ class ArticleType extends AbstractType
             ->add('long_description')
             ->add('content')
             ->add('img')
-            ->add('creation_date')
+
         ;
     }
 

@@ -13,7 +13,10 @@
           <h3 class="mb-0">{{ article.title }}</h3>
           <div class="mb-1 text-muted">{{ article.creationDate ? article.creationDate|date("F jS") : '' }}</div>
           <p class="card-text mb-auto">{{ article.shortDescription }}</p>
-          <a href="{{ path('app_article_show', {'id': article.id}) }}" class="stretched-link">Continue reading</a>
+          <div class="row justify-content-between">
+            <a href="{{ path('app_article_show', {'id': article.id}) }}" class="col-5">Continue reading</a>
+            <a href="{{ path('app_article_edit', {'id': article.id}) }}" class="btn btn-secondary col-2">edit</a>
+          </div>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img class="bd-placeholder-img" width="200" height="250" src="{{ article.img }}" alt="{{ article.title }} img"/>

@@ -25,12 +25,7 @@ class Article
     /**
      * @ORM\Column(type="text")
      */
-    private $short_description;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $long_description;
+    private $description;
 
     /**
      * @ORM\Column(type="text")
@@ -62,31 +57,7 @@ class Article
         $this->title = $title;
 
         return $this;
-    }
-
-    public function getShortDescription(): ?string
-    {
-        return $this->short_description;
-    }
-
-    public function setShortDescription(string $short_description): self
-    {
-        $this->short_description = $short_description;
-
-        return $this;
-    }
-
-    public function getLongDescription(): ?string
-    {
-        return $this->long_description;
-    }
-
-    public function setLongDescription(string $long_description): self
-    {
-        $this->long_description = $long_description;
-
-        return $this;
-    }
+    }    
 
     public function getContent(): ?string
     {
@@ -120,6 +91,18 @@ class Article
     public function setCreationDate(\DateTimeInterface $creation_date): self
     {
         $this->creation_date = $creation_date;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

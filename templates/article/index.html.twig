@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="col-auto d-none d-lg-block">
-        <img class="bd-placeholder-img" width="350" height="350" src="{{ article.img }}" alt="{{ article.title }} img"/>
+        <img class="bd-placeholder-img" width="350" height="350" src="{{ vich_uploader_asset(article) }}" alt="{{ article.title }} img"/>
       </div>
     </div>
     {% else %}
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <img class="bd-placeholder-img" width="200" height="250" src="{{ article.img }}" alt="{{ article.title }} img"/>
+          <img class="bd-placeholder-img" width="200" height="250" src="{{ vich_uploader_asset(article) }}" alt="{{ article.title }} img"/>
         </div>
       </div>
     </div>

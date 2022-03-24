@@ -31,7 +31,7 @@ class ArticleFixtures extends Fixture
                 'Fusce accumsan ante porttitor nisl finibus, vel ultricies purus placerat. Nullam non nisi varius, imperdiet sem sit amet, consequat nulla. Vestibulum vel consequat lectus, vitae fermentum nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras enim risus, sodales id ullamcorper quis, pharetra et mi. Integer mattis, est sed fringilla fringilla, lorem purus tempus mauris, vulputate lacinia augue ligula id eros.'
             ],
             'imgs' => [
-                'https://picsum.photos/id/201/200/300',
+                'https://picsum.photos/id/201/400',
                 'https://picsum.photos/id/202/200/300',
                 'https://picsum.photos/id/203/200/300',
                 'https://picsum.photos/id/204/200/300',

@@ -15,7 +15,9 @@
           <p class="card-text mb-auto">{{ article.shortDescription }}</p>
           <div class="row justify-content-between">
             <a href="{{ path('app_article_show', {'id': article.id}) }}" class="col-5">Continue reading</a>
-            <a href="{{ path('app_article_edit', {'id': article.id}) }}" class="btn btn-secondary col-2">edit</a>
+            {% if is_granted("ROLE_USER") %}
+              <a href="{{ path('app_article_edit', {'id': article.id}) }}" class="btn btn-secondary col-2">edit</a>
+            {% endif %}
           </div>
         </div>
         <div class="col-auto d-none d-lg-block">

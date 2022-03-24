@@ -6,11 +6,13 @@ Cloner le dépot avec a commande :
 
 Entrer le dossier du projet ('cd Test-Mandarine-mini-blog')
 
-creer un fichier .env.local dans lequel vous entrez :
+creer un fichier .env.local à la racine du projet dans lequel vous entrez :
   DATABASE_URL="bdd://your_username:your_pwd@127.0.0.1:3306/mandarine?serverVersion=8.0"
 en remplaçcant bdd :  la base de données que vous utilisez
                your_username : votre identifiant de connection à la bdd 
                your_password : votre mot de passe de connection à la bdd               
+
+Créer un sous-dossier 'images' dans le dossier 'public' pour l'upload d'images
 
 Installer les dépendances à l'aide des commandes :
   composer install
@@ -30,7 +32,8 @@ Générer des données de test :
 Démarrer le server :
   symfony server:start
 
-Ensuite démarrez votre navigateur et entrez localhost:8000 dans la barre de navigation
+Ensuite démarrer votre navigateur et entrer localhost:8000 dans la barre de navigation
 
 ### Commentaires
 Je n'ai pas réussi à autogénérer la date de création d'un article malgré le réglage de la valeur par défaut à current_timestamp dans la base de données.
+Je ne sais pas comment générer un upload d'image avec les fixtures du coup les données d'essais sont sans images mais l'upload fonctionne correctement lors de l'édition et création d'article.

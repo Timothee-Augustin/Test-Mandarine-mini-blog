@@ -30,6 +30,15 @@ class ArticleFixtures extends Fixture
                 'Proin eget mauris at enim pharetra ullamcorper non ac purus. Pellentesque quis nisi et tellus interdum placerat vitae vitae nisl. Nullam lectus ligula, scelerisque ut ipsum non, sodales dictum enim. Nulla ultricies augue pulvinar quam ornare, venenatis vulputate ante vehicula. Duis non eros sodales, mattis augue eu, lobortis velit. Aliquam finibus venenatis dolor. Sed ac sollicitudin est. Vestibulum varius pellentesque dui vitae blandit. Suspendisse placerat augue eu tempor dapibus.',
                 'Fusce accumsan ante porttitor nisl finibus, vel ultricies purus placerat. Nullam non nisi varius, imperdiet sem sit amet, consequat nulla. Vestibulum vel consequat lectus, vitae fermentum nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras enim risus, sodales id ullamcorper quis, pharetra et mi. Integer mattis, est sed fringilla fringilla, lorem purus tempus mauris, vulputate lacinia augue ligula id eros.'
             ],
+            'imgs' => [
+                'https://picsum.photos/id/201/200/300',
+                'https://picsum.photos/id/202/200/300',
+                'https://picsum.photos/id/203/200/300',
+                'https://picsum.photos/id/204/200/300',
+                'https://picsum.photos/id/206/200/300',
+                'https://picsum.photos/id/208/200/300',
+                'https://picsum.photos/id/209/200/300'
+            ],
             'descriptions' => [
                 'Ut ullamcorper consequat rutrum. Donec ac feugiat eros.',
                 'Fusce fringilla mi felis, a pulvinar',
@@ -44,6 +53,7 @@ class ArticleFixtures extends Fixture
             $article = new Article();
             $article->setTitle($createdArticles['titles'][$i]);
             $article->setContent($createdArticles['contents'][$i]);
+            $article->setImg($createdArticles['imgs'][$i]);
             $article->setDescription($createdArticles['descriptions'][$i]);
             $manager->persist($article);
         }

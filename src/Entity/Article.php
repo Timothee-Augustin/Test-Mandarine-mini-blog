@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @Vich\Uploadable
  */
 class Article
 {
@@ -34,8 +37,15 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
      */
     private $img;
+
+     /**
+     * @Vich\UploadableField(mapping="img_file", fileNameProperty="img")
+     * @var File
+     */
+    private $imgFile;
 
     /**
      * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"}, nullable=true)
@@ -81,6 +91,18 @@ class Article
         $this->img = $img;
 
         return $this;
+    }
+
+    public function setImgFile(File $image = null): Article
+    {
+        $this->imgFile = $image;
+
+        return $this;
+    }
+
+    public function getImgFile(): ?File
+    {
+        return $this->imgFile;
     }
 
     public function getCreationDate(): ?\DateTimeInterface

@@ -13,13 +13,13 @@ class ArticleFixtures extends Fixture
         //create 7 articles
         $createdArticles = [        
             'titles' => [
-                'Nulla auctor arcu sit amet urna sodales iaculis',
-                'Nunc ac eros hendrerit erat tincidunt auctor',
+                'Nulla auctor arcu sit amet urna sodales',
+                'Nunc ac eros hendrerit erat tincidunt',
                 'Nam fringilla erat ut auctor dignissim',
-                'Curabitur vel turpis eu magna mollis gravida',
+                'Curabitur vel turpis eu magna mollis',
                 'Etiam egestas ligula mollis porta aliquam',
-                'Praesent et nisi sit amet purus molestie tincidunt',
-                'Aliquam vel ligula sit amet turpis pharetra euismod'
+                'Praesent et nisi sit amet purus molestie',
+                'Aliquam vel ligula sit amet turpis pharetra'
             ], 
             'contents' => [
                 'Ut ullamcorper consequat rutrum. Donec ac feugiat eros. Phasellus rutrum leo sed odio venenatis suscipit. Cras eget fermentum leo. Vivamus pretium pretium elit, in consectetur eros euismod eu. Nam in mi imperdiet, aliquam est quis, sagittis turpis. Maecenas suscipit, augue eu dignissim consequat, elit lacus hendrerit turpis, nec volutpat nulla ligula in lacus. ',

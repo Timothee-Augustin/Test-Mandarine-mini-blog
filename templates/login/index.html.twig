@@ -6,8 +6,9 @@
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-    <main class="form-sigin w-50 mx-auto align-middle">
+    <main class="w-50 mx-auto mt-3">
         <form action="{{ path('app_login') }}" method="post">
+            <h1 class="text-center">Login</h1>
             <div class="form-floating mb-3 mt-3">            
                 <input type="email" class="form-control" id="username" name="_username" placeholder="name@example.com" value="{{ last_username }}"/>
                 <label for="username">Email</label>
